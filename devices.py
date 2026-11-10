@@ -64,7 +64,7 @@ class Host:
                 return next_hop
         return self.routing_table.get("default")  
 
-    def _in_network(self, ip, network): # Assumes /24 (matches spec topology). For other prefix lengths, parse the /N.
+    def _in_network(self, ip, network): # Assumes /24 (matches the two-subnet topology). For other prefix lengths, parse the /N.
         if network == "default":
             return False
         net_prefix = network.split("/")[0].rsplit(".", 1)[0]
